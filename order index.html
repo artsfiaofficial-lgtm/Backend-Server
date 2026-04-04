@@ -71,13 +71,31 @@
                     compressImage(file, 0.5, 600)
                 )
             );
+            
+
+            //get token
+            const resp = await fetch('http://localhost:3000/api/auth/login',{
+                method : "POST",
+                headers : {
+                    'Content-Type' : "application/json"
+                },
+                body : JSON.stringify({
+                    email : "mehrab@email",
+                    password : "1212"
+                })
+            })
+            const token = await resp.json()
+            console.log(token)
+
+
 
             const url = 'http://localhost:3000/api/order/new';
 
             const res = await fetch(url, {
                 method: "POST",
                 headers: {
-                    'Content-Type': "application/json"
+                    'Content-Type': "application/json",
+                     "Authorization": token //token
                 },
                 body: JSON.stringify({
                     address: 'Kadamtoli, Dhaka',
