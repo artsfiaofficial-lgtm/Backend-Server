@@ -1,11 +1,14 @@
 import express from 'express'
+import productRoutes from './routes/productRoutes.js'
 import connectDB from './db/connectDB.js'
 import cors from 'cors'
 import orderRoutes from './routes/orderRoutes.js'
+import dotenv from 'dotenv'
+dotenv.config() // my this thing loads my env file
 
 const app = express()
-const port = 3000
-const database_url = 'mongodb://localhost:27017/'
+const port = process.env.PORT
+const database_url = process.env.MONGO_URI
 
 //connect database
     connectDB(database_url)
@@ -15,7 +18,8 @@ const database_url = 'mongodb://localhost:27017/'
     app.use(express.json())
 //routes
     app.use('/api/order', orderRoutes)
+    app.use('/api/product', productRoutes)
 
 app.listen(port, ()=>{
-    console.log("Server is listening at port ",port)
+    console.log("Server is listening...")
 })
