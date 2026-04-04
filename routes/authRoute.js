@@ -13,7 +13,7 @@ route.post('/login', (req, res)=>{
         res.status(200).json({token})
     }
     else{
-        res.status(401).json({message : "Unauthorized artsfia"})
+        res.status(401).json({message : "Unauthorized"})
     }
 })
 
