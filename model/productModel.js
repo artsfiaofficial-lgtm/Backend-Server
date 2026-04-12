@@ -25,6 +25,9 @@ const productSchema = new mongoose.Schema({
     },
     productTitle : {
         type : String
+    },
+    productType : {
+        type : [mongoose.Schema.Types.Mixed]
     }
 })
 

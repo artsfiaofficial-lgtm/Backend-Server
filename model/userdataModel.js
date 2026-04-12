@@ -21,6 +21,12 @@ const userdataSchema = new mongoose.Schema({
     },
     phoneNumber : {
         type : String
+    },
+    cart : {
+        type : [mongoose.Schema.Types.Mixed] // we passes some objects in a array here
+    },
+    wishlist : {
+        type : [mongoose.Schema.Types.Mixed]
     }
 })
 

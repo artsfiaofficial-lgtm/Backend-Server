@@ -20,7 +20,9 @@ const createNewData = async (req, res) => {
             email,
             name,
             password,
-            phoneNumber
+            phoneNumber,
+            cart,
+            wishlist
         } = req.body;
         const newData = new userdataModel({
             accountStatus,
@@ -29,7 +31,9 @@ const createNewData = async (req, res) => {
             email,
             name,
             password,
-            phoneNumber
+            phoneNumber,
+            cart,
+            wishlist
         });
         await newData.save();
         res.status(201).json(newData);
