@@ -28,6 +28,12 @@ const productSchema = new mongoose.Schema({
     },
     productType : {
         type : [mongoose.Schema.Types.Mixed]
+    },
+    bangleDesignCategory : {
+        type : String
+    },
+    babyBangleCategory : {
+        type : String
     }
 })
 

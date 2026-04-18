@@ -22,7 +22,9 @@ const createNewData = async (req, res) => {
             productPrice,
             productStatus,
             productTitle,
-            productType
+            productType,
+            bangleDesignCategory,
+            babyBangleCategory
         } = req.body;
         const newData = new productModel({
             bangleCategory,
@@ -33,7 +35,9 @@ const createNewData = async (req, res) => {
             productPrice,
             productStatus,
             productTitle,
-            productType
+            productType,
+            babyBangleCategory,
+            bangleDesignCategory
         });
         await newData.save();
         res.status(201).json(newData);

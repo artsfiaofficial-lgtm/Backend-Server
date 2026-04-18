@@ -4,7 +4,7 @@ import auth from '../middleware/auth.js'
 
 const route = express.Router()
 
-route.get('/',auth,getData)
+route.get('/',getData)
 route.post('/new',auth, createNewData)
 route.delete('/delete/:id',auth,deleteData)
 route.put('/update/:id',auth,updateData)

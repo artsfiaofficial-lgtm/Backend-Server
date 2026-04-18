@@ -54,6 +54,12 @@ const orderSchema = new mongoose.Schema({
     },
     totalPrice : {
         type : String
+    },
+    bangleDesignCategory : {
+        type : String
+    },
+    babyBangleCategory : {
+        type : String
     }
 })
 
