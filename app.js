@@ -19,14 +19,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }))
 //connect database
     connectDB(database_url)
 //cors active no restriction    
-    app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://backend-server-xvvb.onrender.com"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+    app.use(cors())
 //body parser active
     app.use(express.json())
 //routes
